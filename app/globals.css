@@ -3,25 +3,66 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    @apply bg-gray-50 !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+input {
+    @apply px-2;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.fc .fc-col-header-cell {
+    @apply text-center px-2 py-1 text-xs font-semibold truncate;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #1e293b;
+    color: #ffffff;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.fc .fc-daygrid-day, .fc .fc-timegrid-slot {
+    @apply border border-gray-600;
+    background-color: #1e293b;
 }
+
+.fc .fc-daygrid-day:hover, .fc .fc-timegrid-slot:hover {
+    background-color: #374151;
+}
+
+.fc .fc-col-header, .fc .fc-timegrid-axis {
+    border-color: #4b5563;
+}
+
+.fc-header-toolbar {
+    @apply space-x-4 flex items-center justify-between;
+    margin-top: 1rem;
+    background-color: #1f2937;
+}
+
+.fc .fc-button {
+    background-color: #1f2937;
+    color: #ffffff;
+    @apply px-4 py-2 rounded-lg font-medium;
+    transition: background-color 0.3s ease;
+}
+
+.fc .fc-button:hover {
+    background-color: #374151;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.fc .fc-button-primary:disabled {
+    opacity: 0.5;
+}
+
+.fc .fc-timegrid-slot-label {
+    color: #d1d5db;
+}
+
+.fc .fc-daygrid-day, .fc .fc-timegrid-slot {
+    @apply border border-gray-700;
+}
+
